@@ -1,30 +1,27 @@
-# E-Commerce Frontend (React)
+# E-Commerce Frontend Application
 
 ## Overview
-This is a frontend-only E-Commerce application built using React.js and Bootstrap.  
-It displays products, allows users to add items to a cart, and place a mock order.
-
-## Tech Stack
-- React.js
-- Bootstrap
-- REST API (Mock data)
+This is a frontend-only E-Commerce web application built using React.js.
+It displays products, allows users to add items to a cart, and manage cart state using Context API.
+The project is designed for interview preparation with clean and simple logic.
 
 ## Features
 - Product listing
 - Add to cart
 - Remove from cart
-- Cart total calculation
-- Responsive UI
+- Cart item count
+- Global cart state using Context API
 
-## Folder Structure
-- components: Reusable UI components
-- pages: Page-level components
-- data: Mock product data
+## Tech Stack
+- React.js
+- HTML, CSS
+- JavaScript
+- Context API
 
-## Setup Instructions
-1. Install Node.js
-2. Run `npm install`
-3. Run `npm start`
+## Project Structure
+- components: UI components
+- context: Global cart state
+- App.js: Main app logic
 
-## Interview Explanation
-This project demonstrates React fundamentals like components, props, state management, and conditional rendering.
+## How to Explain in Interview
+Explain component-based design, Context API usage, and state management.

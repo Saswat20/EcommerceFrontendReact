@@ -1,26 +1,13 @@
-import React, { useState } from 'react';
+import Navbar from './components/Navbar';
 import ProductList from './components/ProductList';
-import Cart from './components/Cart';
+import { CartProvider } from './context/CartContext';
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
-  const removeFromCart = (index) => {
-    cart.splice(index, 1);
-    setCart([...cart]);
-  };
-
   return (
-    <div className="container">
-      <h2 className="my-3">E-Commerce Store</h2>
-      <ProductList addToCart={addToCart} />
-      <Cart cart={cart} removeFromCart={removeFromCart} />
-    </div>
+    <CartProvider>
+      <Navbar />
+      <ProductList />
+    </CartProvider>
   );
 }
-
 export default App;

@@ -1,25 +1,23 @@
-import React from 'react';
-import products from '../data/products';
+import { useCart } from '../context/CartContext';
 
-function ProductList({ addToCart }) {
+const products = [
+  { id:1, name:'Laptop', price:50000 },
+  { id:2, name:'Phone', price:20000 },
+  { id:3, name:'Headphones', price:2000 }
+];
+
+export default function ProductList() {
+  const { addToCart } = useCart();
+
   return (
-    <div className="row">
-      {products.map((p, index) => (
-        <div className="col-md-4" key={index}>
-          <div className="card mb-3">
-            <div className="card-body">
-              <h5>{p.name}</h5>
-              <p>₹{p.price}</p>
-              <button className="btn btn-primary"
-                onClick={() => addToCart(p)}>
-                Add to Cart
-              </button>
-            </div>
-          </div>
+    <div style={{padding:20}}>
+      {products.map(p => (
+        <div key={p.id} style={{background:'#fff', padding:10, marginBottom:10}}>
+          <h4>{p.name}</h4>
+          <p>₹{p.price}</p>
+          <button onClick={() => addToCart(p)}>Add to Cart</button>
         </div>
       ))}
     </div>
   );
 }
-
-export default ProductList;
